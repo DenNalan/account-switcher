@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+ 
+    "name": "Переключение между аккаунтами",
+    "description": "Сохраняй аккаунты на любых сайтах и переключайся между ними одним кликом.",
+    "author": "Nalan",
+    "short_name": "AS",
+    "version": "1.74",
+    "icons": {
+        "16": "img/i16.png",
+        "48": "img/i48.png",
+        "128": "img/i128.png"
+    },
+ 
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+
+    "content_scripts": 
+    [
+        {
+            "matches":["https://www.google.ru/"],
+            "js":["js/jquery.js"],
+            "css": ["css/style.css"],
+            "run_at": "document_end"
+        }
+    ],
+    
+    "permissions": [ "tabs", "cookies", "http://*/*", "https://*/*", "unlimitedStorage", "storage", "webRequest", "webRequestBlocking" ]
+}
